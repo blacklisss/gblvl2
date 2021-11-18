@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func Summer(sum *int) *int {
+func Summer(sum *int) {
 	var wg sync.WaitGroup
 	var workers = make(chan struct{}, 1000)
 
@@ -25,13 +25,12 @@ func Summer(sum *int) *int {
 	}
 
 	wg.Wait()
-	return sum
 }
 
 func main() {
 	var sum = new(int)
 	*sum = 0
 
-	sum = Summer(sum)
+	Summer(sum)
 	fmt.Println(*sum)
 }

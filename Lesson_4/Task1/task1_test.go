@@ -10,7 +10,7 @@ func TestCheckSum(t *testing.T) {
 		var sum = new(int)
 		*sum = 0
 
-		sum = Summer(sum)
+		Summer(sum)
 		if *sum != 1000 {
 			t.Errorf("expected 1000, but recived %d\n", *sum)
 		}
