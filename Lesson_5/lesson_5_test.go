@@ -16,12 +16,22 @@ func TestSummer(t *testing.T) {
 		{1000},
 		{1000},
 		{1000},
+		{1000},
+		{1000},
+		{1000},
+		{1000},
+		{1000},
+		{1000},
+		{1000},
+		{1000},
+		{1000},
 	}
+	var sum = new(int)
+
 	for _, table := range tables {
-		var sum = new(int)
 		*sum = 0
 
-		sum = Summer(sum)
+		Summer(sum)
 
 		if *sum != table.res {
 			t.Fatalf("expected 1000, recived %d\n", *sum)

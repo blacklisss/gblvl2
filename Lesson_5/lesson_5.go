@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func Summer(sum *int) *int {
+func Summer(sum *int) {
 	var (
 		lock    sync.Mutex
 		wg      sync.WaitGroup
@@ -29,14 +29,13 @@ func Summer(sum *int) *int {
 	}
 
 	wg.Wait()
-	return sum
 }
 
 func main() {
 	var sum = new(int)
 	*sum = 0
 
-	sum = Summer(sum)
+	Summer(sum)
 
 	fmt.Println(*sum)
 }
