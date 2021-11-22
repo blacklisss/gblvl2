@@ -7,7 +7,7 @@ import (
 
 func Summer(sum *int) {
 	var (
-		lock    sync.Mutex
+		//lock    sync.Mutex
 		wg      sync.WaitGroup
 		workers = make(chan struct{}, 10)
 	)
@@ -17,10 +17,10 @@ func Summer(sum *int) {
 		workers <- struct{}{}
 
 		go func() {
-			lock.Lock()
+			//lock.Lock()
 			*sum += 1
 			defer func() {
-				lock.Unlock()
+				//lock.Unlock()
 				<-workers
 				wg.Done()
 
@@ -32,6 +32,7 @@ func Summer(sum *int) {
 }
 
 func main() {
+
 	var sum = new(int)
 	*sum = 0
 
